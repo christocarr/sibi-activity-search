@@ -3,7 +3,6 @@ import React from "react"
 const ActivityDetail = ({ results }) => {
 
   const renderedList = results.map((obj, index) => {
-    console.log(obj)
     return (
       <li key={index}>
         <div className="service-container">

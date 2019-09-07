@@ -88,7 +88,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <ActivityCatSelect handleChange={this.onHandleCatSelect} />
         <ActivityTypeSelect
           typeOptions={this.state.typeOptions}
