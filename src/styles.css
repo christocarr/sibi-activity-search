@@ -13,8 +13,27 @@ li {
   margin: 0;
 }
 
-.service-name-container {
+.service-container {
   border: 1px solid black;
   margin-bottom: 1rem;
   padding: 1rem;
+}
+
+.service-container h4 {
+  margin: 0;
+}
+
+.address p,
+.transport p,
+.contact-details p {
+  margin: 0;
+}
+
+.name-number p {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.section-heading {
+  font-weight: bold;
 }
