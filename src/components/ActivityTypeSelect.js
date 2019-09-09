@@ -4,6 +4,7 @@ import Select from "react-select";
 const ActivityCatSelect = ({ typeOptions, handleChange }) => {
   return (
     <div>
+      <p>Type</p>
       <Select options={typeOptions} onChange={handleChange} />
     </div>
   );
