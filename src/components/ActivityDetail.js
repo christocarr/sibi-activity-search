@@ -2,6 +2,7 @@ import React from "react"
 import NameOfService from '../activity-display/NameOfService'
 import Address from '../activity-display/Address'
 import OtherInfo from '../activity-display/OtherInfo'
+import ActivityTimes from '../activity-display/ActivityTimes'
 
 const ActivityDetail = ({ results }) => {
 
@@ -13,9 +14,7 @@ const ActivityDetail = ({ results }) => {
           <NameOfService NameOfService={obj.NameOfService} />
           <Address obj={obj} />
           <OtherInfo otherInfo={obj.OtherDetailedInformation}/>
-          <div className="times">
-            <p>{}</p>
-          </div>
+          <ActivityTimes times={obj} />
           <p>Cost: {obj.Cost}</p>
           <div className="transport">
             <p className="section-heading">Transport:</p>
