@@ -9,7 +9,7 @@ const activityCatOptions = [
 
 const ActivityCatSelect = ({ handleChange }) => {
   return (
-    <div>
+    <div className="select-container">
       <p>Category</p>
       <Select options={activityCatOptions} onChange={handleChange} />
     </div>

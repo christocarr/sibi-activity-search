@@ -28,6 +28,12 @@ class App extends React.Component {
     });
   }
 
+  onHandleTypeSelect = selectedTypeOption => {
+    this.setState({
+      selectedTypeOption: selectedTypeOption.value
+    });
+  };
+
   onHandleCatSelect = selectedCatOption => {
     this.setState({
       selectedCatOption: selectedCatOption.value
@@ -61,12 +67,6 @@ class App extends React.Component {
         ]
       });
     }
-  };
-
-  onHandleTypeSelect = selectedTypeOption => {
-    this.setState({
-      selectedTypeOption: selectedTypeOption.value
-    });
   };
 
   onHandleClick = () => {
