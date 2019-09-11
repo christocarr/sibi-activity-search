@@ -1,5 +1,6 @@
 import React from "react"
 import NameOfService from '../activity-display/NameOfService'
+import Address from '../activity-display/Address'
 
 const ActivityDetail = ({ results }) => {
 
@@ -9,12 +10,7 @@ const ActivityDetail = ({ results }) => {
       <li key={index}>
         <div className="service-container">
           <NameOfService NameOfService={obj.NameOfService} />
-          <div className="address">
-            <p>{obj.AddressLine1}</p>
-            <p>{obj.AddressLine2}</p>
-            <p>{obj.AddressLine3}</p>
-            <p>{obj.Postcode}</p>
-          </div>
+          <Address obj={obj} />
           <p>{obj.OtherDetailedInformation}</p>
           <div className="times">
             <p>{}</p>
