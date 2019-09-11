@@ -8,13 +8,13 @@ const ActivityTimes = ({ times }) => {
   
   return (
     <div className="times">
-      {MondayStart && <p>Monday: {MondayStart} - {MondayEnd}</p>}
-      {TuesdayStart && <p>Tuesday: {TuesdayStart} - {TuesdayEnd}</p>}
-      {WednesdayStart && <p>Wednesday: {WednesdayStart} - {WednesdayEnd}</p>}
-      {ThursdayStart && <p>Thursday: {ThursdayStart} - {ThursdayEnd}</p>}
-      {FridayStart && <p>Friday: {FridayStart} - {FridayEnd}</p>}
-      {SaturdayStart && <p>Saturday: {SaturdayStart} - {SaturdayEnd}</p>}
-      {SundayStart && <p>Sunday: {SundayStart} - {SundayEnd}</p>}
+      {MondayStart && <p><span className="bold">Monday:</span> {MondayStart} - {MondayEnd}</p>}
+      {TuesdayStart && <p><span className="bold">Tuesday:</span> {TuesdayStart} - {TuesdayEnd}</p>}
+      {WednesdayStart && <p><span className="bold">Wednesday:</span> {WednesdayStart} - {WednesdayEnd}</p>}
+      {ThursdayStart && <p><span className="bold">Thursday:</span> {ThursdayStart} - {ThursdayEnd}</p>}
+      {FridayStart && <p><span className="bold">Friday:</span> {FridayStart} - {FridayEnd}</p>}
+      {SaturdayStart && <p><span className="bold">Saturday:</span> {SaturdayStart} - {SaturdayEnd}</p>}
+      {SundayStart && <p><span className="bold">Sunday:</span> {SundayStart} - {SundayEnd}</p>}
     </div>
   )
 }

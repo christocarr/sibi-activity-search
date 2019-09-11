@@ -3,6 +3,8 @@ import NameOfService from '../activity-display/NameOfService'
 import Address from '../activity-display/Address'
 import OtherInfo from '../activity-display/OtherInfo'
 import ActivityTimes from '../activity-display/ActivityTimes'
+import Cost from '../activity-display/Cost'
+import Accessibility from '../activity-display/Accessibility'
 
 const ActivityDetail = ({ results }) => {
 
@@ -15,16 +17,14 @@ const ActivityDetail = ({ results }) => {
           <Address obj={obj} />
           <OtherInfo otherInfo={obj.OtherDetailedInformation}/>
           <ActivityTimes times={obj} />
-          <p>Cost: {obj.Cost}</p>
+          <Cost cost={obj.Cost} />
           <div className="transport">
             <p className="section-heading">Transport:</p>
             <p>Buses: {obj.Buses}</p>
             <p>Tube and Trains: {obj.TubeAndTrains}</p>
             <p>Car Park Availability: {obj.CarParkingDetails}</p>
           </div>
-          <div className="accessibility">
-            <p>Accessibility: {obj.AccessibilityDetails}</p>
-          </div>
+          <Accessibility info={obj.AccessibilityDetails} />
           <div className="contact-details">
             <p className="section-heading">Contact Details:</p>
             <div className="name-number"><p>{obj.Name1}:</p><p>{obj.PhoneNumber1};</p><p>{obj.Email1}; {obj.Email2}</p>

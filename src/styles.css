@@ -21,6 +21,10 @@ li {
   margin: 0;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .service-container {
   border: 1px solid black;
   margin-bottom: 1rem;
@@ -37,6 +41,10 @@ li {
 .times p {
   margin-top: 0;
   margin-bottom: 0.2rem;
+}
+
+.times {
+  margin-bottom: 1rem;
 }
 
 .name-number p {
