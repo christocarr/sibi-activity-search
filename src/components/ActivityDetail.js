@@ -1,12 +1,14 @@
 import React from "react"
+import NameOfService from '../activity-display/NameOfService'
 
 const ActivityDetail = ({ results }) => {
 
   const renderedList = results.map((obj, index) => {
+
     return (
       <li key={index}>
         <div className="service-container">
-          <h4>{obj.NameOfService}</h4>
+          <NameOfService NameOfService={obj.NameOfService} />
           <div className="address">
             <p>{obj.AddressLine1}</p>
             <p>{obj.AddressLine2}</p>
