@@ -5,6 +5,7 @@ import OtherInfo from '../activity-display/OtherInfo'
 import ActivityTimes from '../activity-display/ActivityTimes'
 import Cost from '../activity-display/Cost'
 import Accessibility from '../activity-display/Accessibility'
+import ContactDetails from '../activity-display/ContactDetails'
 
 const ActivityDetail = ({ results }) => {
 
@@ -25,12 +26,7 @@ const ActivityDetail = ({ results }) => {
             <p>Car Park Availability: {obj.CarParkingDetails}</p>
           </div>
           <Accessibility info={obj.AccessibilityDetails} />
-          <div className="contact-details">
-            <p className="section-heading">Contact Details:</p>
-            <div className="name-number"><p>{obj.Name1}:</p><p>{obj.PhoneNumber1};</p><p>{obj.Email1}; {obj.Email2}</p>
-            </div>
-            <a href="{obj.Website}">{obj.Website}</a>
-          </div>
+          <ContactDetails contact={obj} />
         </div>
       </li>
     );
