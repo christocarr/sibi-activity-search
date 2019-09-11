@@ -33,8 +33,10 @@ li {
 
 .address p,
 .transport p,
-.contact-details p {
-  margin: 0;
+.contact-details p,
+.times p {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
 }
 
 .name-number p {
