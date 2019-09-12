@@ -6,6 +6,7 @@ import ActivityTimes from '../activity-display/ActivityTimes'
 import Cost from '../activity-display/Cost'
 import Accessibility from '../activity-display/Accessibility'
 import ContactDetails from '../activity-display/ContactDetails'
+import PrintButton from '../components/PrintButton'
 
 const ActivityDetail = ({ results }) => {
 
@@ -27,6 +28,7 @@ const ActivityDetail = ({ results }) => {
           </div>
           <Accessibility info={obj.AccessibilityDetails} />
           <ContactDetails contact={obj} />
+          <PrintButton />
         </div>
       </li>
     );

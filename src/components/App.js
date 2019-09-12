@@ -2,7 +2,7 @@ import React from "react";
 import Tabletop from "tabletop";
 import ActivityCatSelect from "../components/ActivityCatSelect";
 import ActivityTypeSelect from "../components/ActivityTypeSelect";
-import Button from "../components/Button";
+import SearchButton from "../components/SearchButton";
 import RestartButton from "../components/RestartButton";
 import ActivityDetail from "../components/ActivityDetail";
 
@@ -95,7 +95,7 @@ class App extends React.Component {
           handleChange={this.onHandleTypeSelect}
         />
         <div className="button-container">
-          <Button handleClick={this.onHandleClick} />
+          <SearchButton handleClick={this.onHandleClick} />
           <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
         </div>
         <ActivityDetail results={this.state.results} />
