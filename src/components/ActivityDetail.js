@@ -28,7 +28,7 @@ const ActivityDetail = ({ results }) => {
           </div>
           <Accessibility info={obj.AccessibilityDetails} />
           <ContactDetails contact={obj} />
-          <PrintButton />
+          <PrintButton obj={obj}/>
         </div>
       </li>
     );

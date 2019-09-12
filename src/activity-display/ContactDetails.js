@@ -12,8 +12,8 @@ const ContactDetails = ({ contact }) => {
         {PhoneNumber2 ? <p>{PhoneNumber2};</p> : null}
         {Email2 ? <a href="mailto:{Email2}">{Email2};</a> : null}
         <div className="contact-website">
-          {Website ? <a href={Website} className="website" target="_blank">{Website}</a> : null}
-          {OtherContactInfo ? <a href={OtherContactInfo} target="_blank">{OtherContactInfo}</a> : null}
+          {Website ? <a href={Website} className="website" target="_blank" rel="noopener noreferrer">{Website}</a> : null}
+          {OtherContactInfo ? <a href={OtherContactInfo} target="_blank" rel="noopener noreferrer">{OtherContactInfo}</a> : null}
         </div>
       </div>
     </div>
