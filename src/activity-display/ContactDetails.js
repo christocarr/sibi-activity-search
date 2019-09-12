@@ -7,10 +7,10 @@ const ContactDetails = ({ contact }) => {
       <p className="section-heading">Contact Details:</p>
       <div className="name-number">
         <p>{Name1}:</p> {PhoneNumber1 ? <p>{PhoneNumber1};</p> : null}
-        {Email1 ? <p>{Email1};</p> : null}
+        {Email1 ? <a href="mailto:{Email}">{Email1};</a> : null}
         {Name2 ? <p>{Name2}:</p> : null} 
         {PhoneNumber2 ? <p>{PhoneNumber2};</p> : null}
-        {Email2 ? <p>{Email2};</p> : null}
+        {Email2 ? <a href="mailto:{Email2}">{Email2};</a> : null}
         <div className="contact-website">
           {Website ? <a href={Website} target="_blank">{Website}</a> : null}
           {OtherContactInfo ? <a href={OtherContactInfo} target="_blank">{OtherContactInfo}</a> : null}
