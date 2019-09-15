@@ -28,8 +28,11 @@ const ActivityDetail = ({ results, clickPrint }) => {
           </div>
           <Accessibility info={obj.AccessibilityDetails} />
           <ContactDetails contact={obj} />
-          <Link to="/pdf" target="_blank">
-            <button onClick={() => clickPrint(obj)} >Print</button>
+          <Link to="/pdf" target="_blank" className="print-button-container">
+            <button 
+              className="print-button" 
+              onClick={() => clickPrint(obj)} 
+            >Print</button>
           </Link>
         </div>
       </li>
