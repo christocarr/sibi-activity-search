@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
 })
 
 const PDFDocument = (props) => {
+  const { NameOfService } = props
   console.log(props)
   return(
     <PDFViewer className="pdf-viewer">
@@ -20,7 +21,7 @@ const PDFDocument = (props) => {
         <Page size="A4" style={styles.page}>
           <View style={styles.section}>
             <Text>
-              <h4>{props.NameOfService}</h4>
+              Name of Service
             </Text>
           </View>
         </Page>

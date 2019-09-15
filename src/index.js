@@ -8,7 +8,7 @@ import "./styles.css";
 
 function Index() {
   return (
-    <div>
+    <div className="index">
       <Router>
         <Switch>
           <Route exact path="/" component={App} />

@@ -1,3 +1,7 @@
+html, body, #root, .index {
+  height: 100%;
+}
+
 body p {
   line-height: 1.2em;
 }
