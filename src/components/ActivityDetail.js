@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 import NameOfService from '../activity-display/NameOfService'
 import Address from '../activity-display/Address'
 import OtherInfo from '../activity-display/OtherInfo'
@@ -6,9 +7,8 @@ import ActivityTimes from '../activity-display/ActivityTimes'
 import Cost from '../activity-display/Cost'
 import Accessibility from '../activity-display/Accessibility'
 import ContactDetails from '../activity-display/ContactDetails'
-import PrintButton from '../components/PrintButton'
 
-const ActivityDetail = ({ results }) => {
+const ActivityDetail = ({ results, clickPrint }) => {
 
   const renderedList = results.map((obj, index) => {
 
@@ -28,7 +28,9 @@ const ActivityDetail = ({ results }) => {
           </div>
           <Accessibility info={obj.AccessibilityDetails} />
           <ContactDetails contact={obj} />
-          <PrintButton obj={obj}/>
+          <Link to="/pdf" target="_blank">
+            <button onClick={() => clickPrint(obj)} >Print</button>
+          </Link>
         </div>
       </li>
     );
