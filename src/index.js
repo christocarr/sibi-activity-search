@@ -1,13 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './components/App'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import PDFDocument from '../src/components/PDFDocument'
 
 import "./styles.css";
 
 function Index() {
   return (
     <div>
-      <App />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/pdf" component={PDFDocument} />
+        </Switch>
+      </Router>
+      
     </div>
   );
 }

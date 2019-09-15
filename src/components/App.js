@@ -1,10 +1,12 @@
 import React from "react";
 import Tabletop from "tabletop";
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 import ActivityCatSelect from "../components/ActivityCatSelect";
 import ActivityTypeSelect from "../components/ActivityTypeSelect";
 import SearchButton from "../components/SearchButton";
 import RestartButton from "../components/RestartButton";
 import ActivityDetail from "../components/ActivityDetail";
+import PDFDocument from './PDFDocument'
 
 class App extends React.Component {
   state = {
@@ -80,11 +82,19 @@ class App extends React.Component {
     });
   };
 
+
   onHandleRestartSearch = () => {
     this.setState({
-      results: []
+      results: [],
+      typeOptions: []
+      // selectedCatOption: null,
+      // selectedTypeOption: null
     });
   };
+
+  onHandlePrint = (data) => {
+    console.log(data)
+  }
 
   render() {
     return (
@@ -98,7 +108,7 @@ class App extends React.Component {
           <SearchButton handleClick={this.onHandleClick} />
           <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
         </div>
-        <ActivityDetail results={this.state.results} />
+        <ActivityDetail results={this.state.results} clickPrint={this.onHandlePrint} />
       </div>
     );
   }
