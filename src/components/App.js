@@ -94,13 +94,13 @@ class App extends React.Component {
   };
 
   onHandlePrint = (pdf) => {
-    // console.log(typeof pdf)
-    // this.setState({pdf}, function() {
-    //   console.log(this.state.pdf)
-    // })
-    this.setState((prevState, props) => {
-      return { pdf: prevState }
+    console.log(typeof pdf)
+    this.setState({pdf}, function() {
+      console.log(this.state.pdf)
     })
+    // this.setState((prevState, props) => {
+    //   return { pdf: prevState }
+    // })
   }
 
   render() {
