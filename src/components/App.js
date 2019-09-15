@@ -1,11 +1,11 @@
 import React from "react";
 import Tabletop from "tabletop";
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
-import ActivityCatSelect from "../components/ActivityCatSelect";
-import ActivityTypeSelect from "../components/ActivityTypeSelect";
-import SearchButton from "../components/SearchButton";
-import RestartButton from "../components/RestartButton";
-import ActivityDetail from "../components/ActivityDetail";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
+import ActivityCatSelect from "./ActivityCatSelect";
+import ActivityTypeSelect from "./ActivityTypeSelect";
+import SearchButton from "./SearchButton";
+import RestartButton from "./RestartButton";
+import ActivityDetail from "./ActivityDetail";
 import PDFDocument from './PDFDocument'
 
 class App extends React.Component {
@@ -14,7 +14,8 @@ class App extends React.Component {
     selectedTypeOption: null,
     typeOptions: [],
     data: [],
-    results: []
+    results: [],
+    pdf: null
   };
 
   componentDidMount() {
@@ -92,23 +93,39 @@ class App extends React.Component {
     });
   };
 
-  onHandlePrint = (data) => {
-    console.log(data)
+  onHandlePrint = (pdf) => {
+    // console.log(typeof pdf)
+    // this.setState({pdf}, function() {
+    //   console.log(this.state.pdf)
+    // })
+    this.setState((prevState, props) => {
+      return { pdf: prevState }
+    })
   }
 
   render() {
     return (
       <div className="container">
-        <ActivityCatSelect handleChange={this.onHandleCatSelect} />
-        <ActivityTypeSelect
-          typeOptions={this.state.typeOptions}
-          handleChange={this.onHandleTypeSelect}
-        />
-        <div className="button-container">
-          <SearchButton handleClick={this.onHandleClick} />
-          <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
-        </div>
-        <ActivityDetail results={this.state.results} clickPrint={this.onHandlePrint} />
+        <Router>
+          <ActivityCatSelect handleChange={this.onHandleCatSelect} />
+          <ActivityTypeSelect
+            typeOptions={this.state.typeOptions}
+            handleChange={this.onHandleTypeSelect}
+          />
+          <div className="button-container">
+            <SearchButton handleClick={this.onHandleClick} />
+            <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
+          </div>
+          <ActivityDetail results={this.state.results} clickPrint={this.onHandlePrint} />
+          <Switch>
+            <Route 
+              path="/pdf" 
+              render={() => (
+                <PDFDocument data={this.state.pdf} />
+              )} 
+            />
+          </Switch>
+        </Router>
       </div>
     );
   }
