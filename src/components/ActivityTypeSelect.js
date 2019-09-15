@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-const ActivityCatSelect = ({ typeOptions, handleChange }) => {
+const ActivityTypeSelect = ({ typeOptions, handleChange }) => {
   return (
     <div className="select-container">
       <p>Type</p>
@@ -10,4 +10,4 @@ const ActivityCatSelect = ({ typeOptions, handleChange }) => {
   );
 };
 
-export default ActivityCatSelect;
+export default ActivityTypeSelect;
