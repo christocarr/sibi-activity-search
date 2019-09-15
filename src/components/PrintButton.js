@@ -1,9 +1,10 @@
 import React from 'react'
 
-const PrintButton = () => {
+const PrintButton = ({ obj }) => {
+  console.log(obj)
   return (
-    <div>
-      <button>Print</button>
+    <div className="print-button-container">
+      <button className="print-button">Print</button>
     </div>
   )
 }
