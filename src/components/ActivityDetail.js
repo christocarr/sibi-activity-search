@@ -8,10 +8,18 @@ import Cost from '../activity-display/Cost'
 import Accessibility from '../activity-display/Accessibility'
 import ContactDetails from '../activity-display/ContactDetails'
 
-const ActivityDetail = ({ results, clickPrint }) => {
+const ActivityDetail = ({ results, clickPrint, lastChecked }) => {
+  let filteredList = []
+  if (lastChecked === true) {
+    filteredList = results.filter(obj => obj.dateLastChecked)
+  } else {
+    filteredList = results.filter(obj => obj.dateLastChecked !== null)
+  }
 
-  const renderedList = results.map((obj, index) => {
-
+  console.log(filteredList)
+  
+  const renderedList = filteredList.map((obj, index) => {
+    
     return (
       <li key={index}>
         <div className="service-container">
