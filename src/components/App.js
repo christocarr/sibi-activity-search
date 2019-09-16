@@ -15,6 +15,7 @@ class App extends React.Component {
     typeOptions: [],
     data: [],
     results: [],
+    lastChecked: false,
     pdf: null
   };
 
@@ -83,13 +84,10 @@ class App extends React.Component {
     });
   };
 
-
   onHandleRestartSearch = () => {
     this.setState({
       results: [],
       typeOptions: []
-      // selectedCatOption: null,
-      // selectedTypeOption: null
     });
   };
 
@@ -98,9 +96,6 @@ class App extends React.Component {
     this.setState({pdf}, function() {
       console.log(this.state.pdf)
     })
-    // this.setState((prevState, props) => {
-    //   return { pdf: prevState }
-    // })
   }
 
   render() {
@@ -116,7 +111,20 @@ class App extends React.Component {
             <SearchButton handleClick={this.onHandleClick} />
             <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
           </div>
-          <ActivityDetail results={this.state.results} clickPrint={this.onHandlePrint} />
+          <div>
+            <label htmlFor="lastChecked">Last Checked</label>
+            <input 
+              id="lastChecked" 
+              type="checkbox"
+              value={this.state.lastChecked}
+              onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
+            />
+          </div>
+          <ActivityDetail 
+            results={this.state.results} 
+            clickPrint={this.onHandlePrint}
+            lastChecked={this.state.lastChecked}
+          />
           <Switch>
             <Route 
               path="/pdf" 
