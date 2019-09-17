@@ -16,7 +16,7 @@ class App extends React.Component {
     data: [],
     results: [],
     lastChecked: false,
-    location: null,
+    location: '',
     pdf: []
   };
 
@@ -92,6 +92,11 @@ class App extends React.Component {
     });
   };
 
+  onHandleLocationInput = (e) => {
+    this.setState({location: e.target.value})
+    console.log(this.state.location)
+  }
+
   onHandlePrint = (pdf) => {
     this.setState({pdf}, () => {
       console.log(this.state.pdf)
@@ -125,9 +130,9 @@ class App extends React.Component {
               <label htmlFor="location">Location</label>
               <input
                 id="location"
-                type="input"
+                type="text"
                 value={this.state.location}
-                // onChange={() => this.setState({location: })
+                onChange={this.onHandleLocationInput}
               />
             </div>
           </div>
