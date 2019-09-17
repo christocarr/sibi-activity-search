@@ -8,7 +8,7 @@ import Cost from '../activity-display/Cost'
 import Accessibility from '../activity-display/Accessibility'
 import ContactDetails from '../activity-display/ContactDetails'
 
-const ActivityDetail = ({ results, clickPrint, lastChecked }) => {
+const ActivityDetail = ({ results, clickPrint, lastChecked, location }) => {
   let filteredList = []
   if (lastChecked === true) {
     filteredList = results.filter(obj => obj.dateLastChecked)
@@ -16,8 +16,10 @@ const ActivityDetail = ({ results, clickPrint, lastChecked }) => {
     filteredList = results.filter(obj => obj.dateLastChecked !== null)
   }
 
-  console.log(filteredList)
-  
+  filteredList = filteredList.filter(obj => {
+    return obj.Town.toLowerCase().indexOf(location.toLowerCase()) !== -1
+  })
+
   const renderedList = filteredList.map((obj, index) => {
     
     return (
