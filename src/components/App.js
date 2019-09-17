@@ -112,20 +112,24 @@ class App extends React.Component {
             <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
           </div>
           <div className="filters">
-            <label htmlFor="lastChecked">Only show activities that were last checked</label>
-            <input 
-              id="lastChecked" 
-              type="checkbox"
-              value={this.state.lastChecked}
-              onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
-            />
-            <label htmlFor="location">Location</label>
-            <input
-              id="location"
-              type="input"
-              value={this.state.location}
-              // onChange={() => this.setState({location: })
-            />
+            <div>
+              <label htmlFor="lastChecked">Only show activities that were last checked</label>
+              <input 
+                id="lastChecked" 
+                type="checkbox"
+                value={this.state.lastChecked}
+                onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
+              />
+            </div>
+            <div>
+              <label htmlFor="location">Location</label>
+              <input
+                id="location"
+                type="input"
+                value={this.state.location}
+                // onChange={() => this.setState({location: })
+              />
+            </div>
           </div>
           <ActivityDetail 
             results={this.state.results} 
