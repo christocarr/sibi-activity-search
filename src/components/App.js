@@ -112,7 +112,7 @@ class App extends React.Component {
             <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
           </div>
           <div>
-            <label htmlFor="lastChecked">Last Checked</label>
+            <label htmlFor="lastChecked">Only show activities that were last checked</label>
             <input 
               id="lastChecked" 
               type="checkbox"
