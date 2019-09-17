@@ -16,7 +16,8 @@ class App extends React.Component {
     data: [],
     results: [],
     lastChecked: false,
-    pdf: null
+    location: null,
+    pdf: []
   };
 
   componentDidMount() {
@@ -92,8 +93,7 @@ class App extends React.Component {
   };
 
   onHandlePrint = (pdf) => {
-    console.log(typeof pdf)
-    this.setState({pdf}, function() {
+    this.setState({pdf}, () => {
       console.log(this.state.pdf)
     })
   }
@@ -111,13 +111,20 @@ class App extends React.Component {
             <SearchButton handleClick={this.onHandleClick} />
             <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
           </div>
-          <div>
+          <div className="filters">
             <label htmlFor="lastChecked">Only show activities that were last checked</label>
             <input 
               id="lastChecked" 
               type="checkbox"
               value={this.state.lastChecked}
               onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
+            />
+            <label htmlFor="location">Location</label>
+            <input
+              id="location"
+              type="input"
+              value={this.state.location}
+              // onChange={() => this.setState({location: })
             />
           </div>
           <ActivityDetail 
