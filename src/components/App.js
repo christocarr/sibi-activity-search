@@ -113,7 +113,7 @@ class App extends React.Component {
           </div>
           <div className="filters">
             <div>
-              <label htmlFor="lastChecked">Only show activities that were last checked</label>
+              <label htmlFor="lastChecked">Only show activities that were checked</label>
               <input 
                 id="lastChecked" 
                 type="checkbox"
