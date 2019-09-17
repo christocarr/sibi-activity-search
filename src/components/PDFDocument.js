@@ -12,9 +12,8 @@ const styles = StyleSheet.create({
   }
 })
 
-const PDFDocument = (props) => {
-  const { NameOfService } = props
-  console.log(props)
+const PDFDocument = ({ data }) => {
+  console.log(data)
   return(
     <PDFViewer className="pdf-viewer">
       <Document>

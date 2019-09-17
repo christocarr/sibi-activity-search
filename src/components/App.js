@@ -16,7 +16,7 @@ class App extends React.Component {
     data: [],
     results: [],
     lastChecked: false,
-    location: '',
+    town: '',
     pdf: []
   };
 
@@ -93,8 +93,7 @@ class App extends React.Component {
   };
 
   onHandleLocationInput = (e) => {
-    this.setState({location: e.target.value})
-    console.log(this.state.location)
+    this.setState({town: e.target.value})
   }
 
   onHandlePrint = (pdf) => {
@@ -127,11 +126,11 @@ class App extends React.Component {
               />
             </div>
             <div>
-              <label htmlFor="location">Location</label>
+              <label htmlFor="location">Town: </label>
               <input
                 id="location"
                 type="text"
-                value={this.state.location}
+                value={this.state.town}
                 onChange={this.onHandleLocationInput}
               />
             </div>
@@ -140,6 +139,7 @@ class App extends React.Component {
             results={this.state.results} 
             clickPrint={this.onHandlePrint}
             lastChecked={this.state.lastChecked}
+            town={this.state.town}
           />
           <Switch>
             <Route 
