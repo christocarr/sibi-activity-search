@@ -97,9 +97,7 @@ class App extends React.Component {
   }
 
   onHandlePrint = (pdf) => {
-    this.setState({pdf}, () => {
-      console.log(this.state.pdf)
-    })
+    localStorage.setItem('PDFData', JSON.stringify(pdf))
   }
 
   render() {
@@ -145,7 +143,7 @@ class App extends React.Component {
             <Route 
               path="/pdf" 
               render={() => (
-                <PDFDocument data={this.state.pdf} />
+                <PDFDocument />
               )} 
             />
           </Switch>
