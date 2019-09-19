@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { PDFViewer, Page, Text, View, Document,StyleSheet } from '@react-pdf/renderer'
 
-const data = localStorage.getItem('PDFData')
-const PDFData = JSON.parse(data)
+// const data = localStorage.getItem('PDFData')
+// const PDFData = JSON.parse(data)
 
-console.log(PDFData)
+// console.log(PDFData)
 
-const { NameOfService, AccessibilityDetails, AddressLine1, AddressLine2, AddressLine3, Postcode, OtherDetailedInformation, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd, SundayStart, SundayEnd, Cost,  Buses, TubeAndTrains, CarParkingDetails, Name1, PhoneNumber1, Email1, Name2, PhoneNumber2, Email2, Website, OtherContactInfo  } = PDFData
+// const { NameOfService, AccessibilityDetails, AddressLine1, AddressLine2, AddressLine3, Postcode, OtherDetailedInformation, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd, SundayStart, SundayEnd, Cost,  Buses, TubeAndTrains, CarParkingDetails, Name1, PhoneNumber1, Email1, Name2, PhoneNumber2, Email2, Website, OtherContactInfo  } = PDFData
 
 
 const styles = StyleSheet.create({
@@ -29,6 +29,19 @@ const styles = StyleSheet.create({
 })
 
 const PDFDocument = () => {
+
+  const [PDFData, setPDFData] = useState(() => {
+    const data = localStorage.getItem('PDFData')
+    return JSON.parse(data)
+  })
+
+  // useEffect(() => {
+  //   console.log(PDFData)},
+  //   [PDFData]
+  // })
+
+  const { NameOfService, AccessibilityDetails, AddressLine1, AddressLine2, AddressLine3, Postcode, OtherDetailedInformation, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd, SundayStart, SundayEnd, Cost,  Buses, TubeAndTrains, CarParkingDetails, Name1, PhoneNumber1, Email1, Name2, PhoneNumber2, Email2, Website, OtherContactInfo  } = PDFData
+
   return(
     <PDFViewer className="pdf-viewer">
       <Document>
