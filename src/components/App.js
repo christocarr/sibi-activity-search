@@ -120,6 +120,83 @@ class App extends React.Component {
           { value: "1208- Classic board games", label: "Classic board games" },
         ]
       })
+    } else if (selectedCatOption.value === "Activity (music & drama)") {
+      this.setState({
+        typeOptions: [
+          { value: "1300- Playing CDs", label: "Playing CDs" },
+          { value: "1302- Theatre", label: "Theatre" },
+          { value: "1303- Concert", label: "Concert" },
+          { value: "1304- Singing", label: "Singing" },
+          { value: "1305- Drama class", label: "Drama class" },
+          { value: "1306- Playing an instrument", label: "Playing an instrument" },
+          { value: "1307- Listening to music", label: "Listening to music" },
+        ]
+      })
+    } else if (selectedCatOption.value === "Activity (sport & active games)") {
+      this.setState({
+        typeOptions: [
+          { value: "1641- Martial arts", label: "Martial arts" },
+          { value: "1642- Boxing", label: "Boxing" },
+          { value: "1605- Netball", label: "Netball" },
+          { value: "1603- Football", label: "Football" },
+          { value: "1623- Table tennis", label: "Table tennis" },
+          { value: "1608- Disability sports", label: "Disability sports" },
+          { value: "1663- Lawn bowls", label: "Lawn bowls" },
+          { value: "1621- Badminton", label: "Badminton" },
+          { value: "1601- Basketball", label: "Basketball" },
+          { value: "1624- Tennis", label: "Tennis" },
+          { value: "1610- Boccia", label: "Boccia" },
+          { value: "1611- Athletics", label: "Athletics" },
+          { value: "1606- Rounders / baseball", label: "Rounders / baseball" },
+          { value: "1612- Footgolf", label: "Footgolf" },
+          { value: "1662- Golf", label: "Golf" },
+          { value: "1602- Cricket", label: "Cricket" },
+          { value: "1609- Archery", label: "Archery" },
+          { value: "1613- Tag Rugby", label: "Tag rugby" },
+          { value: "1607- Rugby", label: "Rugby" },
+          { value: "1622- Squash", label: "Squash" },
+          { value: "1614- Triathlon", label: "Triathlon" },
+          { value: "1625 - Volleyball", label: "Volleyball" },
+        ]
+      })
+    } else if (selectedCatOption === "Learning topic") {
+      this.setState({
+        typeOptions: [
+          { value: "1701- ESOL", label: "ESOL" },
+          { value: "1704- IT", label: "IT" },
+          { value: "1705- Languages", label: "Languages" },
+          { value: "1707- Religion", label: "Religion" },
+          { value: "1709- General education", label: "General education" },
+          { value: "1711- Philosophy", label: "Philosophy" },
+          { value: "1700- Novels and their TV adaptations", label: "Novels and TV adaptions" },
+          { value: "1710- Maths", label: "Maths" },
+        ]
+      })
+    } else if (selectedCatOption === "Advice") {
+      this.setState({
+        typeOptions: [
+          { value: "2021- Dementia", label: "Dementia" },
+          { value: "2018- Peer support", label: "Peer support" },
+          { value: "2021- Dementia", label: "Dementia" },
+          { value: "2002- Health", label: "Health" },
+          { value: "2003- Housing", label: "Housing" },
+          { value: "2007- General advice", label: "General advice" },
+          { value: "2009- Advocacy", label: "Advocacy" },
+          { value: "2020- Relaxation therapy", label: "Relaxation therapy" },
+          { value: "2011- Counselling/psychotherapy", label: "Counselling / psychotherapy" },
+          { value: "2006- Employment / training", label: "Employment / training" },
+          { value: "2005- Financial", label: "Financial" },
+          { value: "2008- Disability issues", label: "Disability issues" },
+          { value: "2014- Day care / respite", label: "Day care / respite" },
+          { value: "2001- Benefits", label: "Benefits" },
+          { value: "2016- Care / social services", label: "Care / social services" },
+          { value: "2010- Foodbank", label: "Foodbank" },
+          { value: "2012- Home / community library", label: "Home / community library" },
+          { value: "2017- Education", label: "Education" },
+          { value: "2015- Community support / befriending", label: "Community support / befriending" },
+          { value: "2022- Mindfulness", label: "Mindfulness" },
+        ]
+      })
     }
   };
 
