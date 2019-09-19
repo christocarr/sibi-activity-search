@@ -159,7 +159,7 @@ class App extends React.Component {
           { value: "1625 - Volleyball", label: "Volleyball" },
         ]
       })
-    } else if (selectedCatOption === "Learning topic") {
+    } else if (selectedCatOption.value === "Learning topic") {
       this.setState({
         typeOptions: [
           { value: "1701- ESOL", label: "ESOL" },
@@ -172,7 +172,7 @@ class App extends React.Component {
           { value: "1710- Maths", label: "Maths" },
         ]
       })
-    } else if (selectedCatOption === "Advice") {
+    } else if (selectedCatOption.value === "Advice") {
       this.setState({
         typeOptions: [
           { value: "2021- Dementia", label: "Dementia" },
