@@ -209,8 +209,7 @@ class App extends React.Component {
     this.setState({
       results,
       selectedCatOption: null,
-      selectedTypeOption: null,
-      typeOptions: []
+      selectedTypeOption: null
     });
   };
 
@@ -233,7 +232,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Router>
-          <ActivityCatSelect handleChange={this.onHandleCatSelect} />
+          <ActivityCatSelect handleChange={this.onHandleCatSelect} value={this.state.selectedCatOption} />
           <ActivityTypeSelect
             typeOptions={this.state.typeOptions}
             handleChange={this.onHandleTypeSelect}
