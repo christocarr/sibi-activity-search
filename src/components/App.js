@@ -41,7 +41,7 @@ class App extends React.Component {
 
   onHandleCatSelect = selectedCatOption => {
     this.setState({
-      selectedCatOption: selectedCatOption.value
+      selectedCatOption
     });
 
     if (selectedCatOption.value === "Activity (art & craft)") {
