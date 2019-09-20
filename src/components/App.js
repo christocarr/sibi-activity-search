@@ -172,7 +172,7 @@ class App extends React.Component {
           { value: "1710- Maths", label: "Maths" },
         ]
       })
-    } else if (selectedCatOption.value === "Advice") {
+    } else if (selectedCatOption.value === "Advice category") {
       this.setState({
         typeOptions: [
           { value: "2021- Dementia", label: "Dementia" },
