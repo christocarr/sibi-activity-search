@@ -12,13 +12,10 @@ const activityCatOptions = [
   { value: "Advice category", label: "Advice" }
 ];
 
-const ActivityCatSelect = ({ handleChange }) => {
+const ActivityCatSelect = ({ handleChange, value }) => {
   return (
     <div className="select-container">
       <p>Category</p>
-      <Select options={activityCatOptions} onChange={handleChange} />
-    </div>
-  );
-};
+      <Select options={activityCatOptions} onChange={handleChange} value={value} />
 
 export default ActivityCatSelect;
