@@ -208,8 +208,8 @@ class App extends React.Component {
     });
     this.setState({
       results,
-      selectedCatOption: null,
-      selectedTypeOption: null
+//       selectedCatOption: null, ressetting state before results are passed to render list
+//       selectedTypeOption: null
     });
   };
 
