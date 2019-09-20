@@ -207,9 +207,10 @@ class App extends React.Component {
       );
     });
     this.setState({
-      results
-      selectedCatOption: null
-      selectedTypeOption: null
+      results,
+      selectedCatOption: null,
+      selectedTypeOption: null,
+      typeOptions: []
     });
   };
 
