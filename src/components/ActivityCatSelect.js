@@ -9,7 +9,7 @@ const activityCatOptions = [
   { value: "Activity (music & drama)", label: "Music and drama" },
   { value: "Activity (sport & active games)", label: "Sports and active games" },
   { value: "Learning topic", label: "Learning" },
-  { value: "Advice", label: "Advice" }
+  { value: "Advice category", label: "Advice" }
 ];
 
 const ActivityCatSelect = ({ handleChange }) => {
