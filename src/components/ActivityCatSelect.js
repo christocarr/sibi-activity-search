@@ -17,5 +17,6 @@ const ActivityCatSelect = ({ handleChange, value }) => {
     <div className="select-container">
       <p>Category</p>
       <Select options={activityCatOptions} onChange={handleChange} value={value} />
-
+    </div>
+    
 export default ActivityCatSelect;
