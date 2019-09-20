@@ -208,9 +208,9 @@ class App extends React.Component {
     });
     this.setState({
       results
+      selectedCatOption: null
+      selectedTypeOption: null
     });
-    selectedCatOption.value = '';
-    selectedTypeOption.value = '';
   };
 
   onHandleRestartSearch = () => {
