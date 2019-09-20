@@ -250,7 +250,7 @@ class App extends React.Component {
               />
             </div>
             <div>
-              <label htmlFor="location">Search for town: </label>
+              <label htmlFor="location">Search by town: </label>
               <input
                 id="location"
                 type="text"
