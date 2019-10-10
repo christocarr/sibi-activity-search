@@ -33,6 +33,12 @@ const PDFDocument = () => {
     <PDFViewer className="pdf-viewer">
       <Document>
         <Page size="A4" style={styles.page}>
+          <View style={styles.text}>
+            <Text>Going to a new group can feel daunting but be very worthwhile. Groups all vary so you may need to try a few groups or go more than once to get to know people and find somewhere that suits you. And while we provide information about what groups are out there we can't guarantee them.</Text>
+          </View>
+          <View style={styles.text}>
+            <Text>You can simply turn up to most groups, they run on a drop-on basis and there's no need to book unless it says so. While our information is fairly recent it's best to double check before making a long journey as classes can stop or take a break.</Text>
+          </View>
           <View style={styles.heading}>
             <Text>{NameOfService}</Text>
           </View>
