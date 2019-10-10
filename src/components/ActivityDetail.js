@@ -8,13 +8,8 @@ import Cost from '../activity-display/Cost'
 import Accessibility from '../activity-display/Accessibility'
 import ContactDetails from '../activity-display/ContactDetails'
 
-const ActivityDetail = ({ results, clickPrint, lastChecked, town }) => {
+const ActivityDetail = ({ results, clickPrint, town }) => {
   let filteredList = []
-  if (lastChecked === true) {
-    filteredList = results.filter(obj => obj.dateLastChecked)
-  } else {
-    filteredList = results.filter(obj => obj.dateLastChecked !== null)
-  }
 
   //filter list by town name
   filteredList = filteredList.filter(obj => {

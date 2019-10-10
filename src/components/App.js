@@ -16,7 +16,6 @@ class App extends React.Component {
     typeOptions: [],
     data: [],
     results: [],
-    lastChecked: false,
     town: '',
     pdf: []
   };
@@ -241,15 +240,6 @@ class App extends React.Component {
             </div>
             <div className="filters">
               <div>
-                <label htmlFor="lastChecked">Only show activities that were checked</label>
-                <input 
-                  id="lastChecked" 
-                  type="checkbox"
-                  value={this.state.lastChecked}
-                  onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
-                />
-              </div>
-              <div>
                 <label htmlFor="location">Search by town: </label>
                 <input
                   id="location"
@@ -262,7 +252,6 @@ class App extends React.Component {
             <ActivityDetail 
               results={this.state.results} 
               clickPrint={this.onHandlePrint}
-              lastChecked={this.state.lastChecked}
               town={this.state.town}
             />
             <Switch>
