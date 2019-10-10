@@ -1,15 +1,16 @@
 import React from "react";
 import Tabletop from "tabletop";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
+import Loading from './Loading'
 import ActivityCatSelect from "./ActivityCatSelect";
 import ActivityTypeSelect from "./ActivityTypeSelect";
 import SearchButton from "./SearchButton";
-import RestartButton from "./RestartButton";
 import ActivityDetail from "./ActivityDetail";
 import PDFDocument from './PDFDocument'
 
 class App extends React.Component {
   state = {
+    loading: false,
     selectedCatOption: null,
     selectedTypeOption: null,
     typeOptions: [],
@@ -21,16 +22,19 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    Tabletop.init({
-      key:
-      "https://docs.google.com/spreadsheets/d/1fCEncFdCd_Fy1HbuBQrqvVWr4RNE5VOt4eRyDGxY6Cg/edit?usp=sharing",
-      callback: data => {
-        this.setState({
-          data: data
-        });
-      },
-      simpleSheet: true
-    });
+    this.setState({ loading: true }, () => {
+      Tabletop.init({
+        key:
+        "https://docs.google.com/spreadsheets/d/1fCEncFdCd_Fy1HbuBQrqvVWr4RNE5VOt4eRyDGxY6Cg/edit?usp=sharing",
+        callback: data => {
+          this.setState({
+            data: data
+          });
+          this.setState({ loading: false })
+        },
+        simpleSheet: true
+      });
+    })
   }
 
   onHandleTypeSelect = selectedTypeOption => {
@@ -207,9 +211,7 @@ class App extends React.Component {
       );
     });
     this.setState({
-      results,
-//       selectedCatOption: null, ressetting state before results are passed to render list
-//       selectedTypeOption: null
+      results
     });
   };
 
@@ -223,52 +225,57 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <Router>
-          <ActivityCatSelect handleChange={this.onHandleCatSelect} value={this.state.selectedCatOption} />
-          <ActivityTypeSelect
-            typeOptions={this.state.typeOptions}
-            handleChange={this.onHandleTypeSelect}
-          />
-          <div className="button-container">
-            <SearchButton handleClick={this.onHandleClick} />
-          </div>
-          <div className="filters">
-            <div>
-              <label htmlFor="lastChecked">Only show activities that were checked</label>
-              <input 
-                id="lastChecked" 
-                type="checkbox"
-                value={this.state.lastChecked}
-                onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
-              />
-            </div>
-            <div>
-              <label htmlFor="location">Search by town: </label>
-              <input
-                id="location"
-                type="text"
-                value={this.state.town}
-                onChange={this.onHandleLocationInput}
-              />
-            </div>
-          </div>
-          <ActivityDetail 
-            results={this.state.results} 
-            clickPrint={this.onHandlePrint}
-            lastChecked={this.state.lastChecked}
-            town={this.state.town}
-          />
-          <Switch>
-            <Route 
-              path="/pdf" 
-              render={() => (
-                <PDFDocument />
-              )} 
+      // show inputs only when loading is complete
+      this.state.loading ? (
+        <Loading />
+      ) : (
+        <div className="container">
+          <Router>
+            <ActivityCatSelect handleChange={this.onHandleCatSelect} value={this.state.selectedCatOption} />
+            <ActivityTypeSelect
+              typeOptions={this.state.typeOptions}
+              handleChange={this.onHandleTypeSelect}
             />
-          </Switch>
-        </Router>
-      </div>
+            <div className="button-container">
+              <SearchButton handleClick={this.onHandleClick} />
+            </div>
+            <div className="filters">
+              <div>
+                <label htmlFor="lastChecked">Only show activities that were checked</label>
+                <input 
+                  id="lastChecked" 
+                  type="checkbox"
+                  value={this.state.lastChecked}
+                  onChange={() => this.setState({lastChecked: !this.state.lastChecked})} 
+                />
+              </div>
+              <div>
+                <label htmlFor="location">Search by town: </label>
+                <input
+                  id="location"
+                  type="text"
+                  value={this.state.town}
+                  onChange={this.onHandleLocationInput}
+                />
+              </div>
+            </div>
+            <ActivityDetail 
+              results={this.state.results} 
+              clickPrint={this.onHandlePrint}
+              lastChecked={this.state.lastChecked}
+              town={this.state.town}
+            />
+            <Switch>
+              <Route 
+                path="/pdf" 
+                render={() => (
+                  <PDFDocument />
+                )} 
+              />
+            </Switch>
+          </Router>
+        </div>
+      ) 
     );
   }
 }
