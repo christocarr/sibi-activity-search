@@ -11,6 +11,21 @@ import ContactDetails from '../activity-display/ContactDetails'
 const ActivityDetail = ({ results, clickPrint, town }) => {
   let filteredList = []
 
+  // filter search results by date last check is no later than 18 months
+  filteredList = results.filter(item => {
+    const dateNow = Date.now()
+    // eighteen months in unix/epoch time in milliseconds
+    const eighteenMonths = 47304051840
+    // convert date on sheet to valid format
+    let dateString = item.dateLastChecked
+    let dateParts = dateString.split('/')
+    let itemDate = new Date(+dateParts[2], dateParts[1] - 1, dateParts[0])
+    //parse sheet date to Unix time 
+    itemDate = Date.parse(itemDate)
+    const dateDiff = dateNow - itemDate
+    return dateDiff <= eighteenMonths
+  })
+
   //filter list by town name
   filteredList = filteredList.filter(obj => {
     return obj.Town.toLowerCase().indexOf(town.toLowerCase()) !== -1
