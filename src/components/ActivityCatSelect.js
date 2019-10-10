@@ -9,16 +9,16 @@ const activityCatOptions = [
   { value: "Activity (music & drama)", label: "Music and drama" },
   { value: "Activity (sport & active games)", label: "Sports and active games" },
   { value: "Learning topic", label: "Learning" },
-  { value: "Advice", label: "Advice" }
+  { value: "Advice category", label: "Advice" }
 ];
 
-const ActivityCatSelect = ({ handleChange }) => {
+const ActivityCatSelect = ({ handleChange, value }) => {
   return (
     <div className="select-container">
       <p>Category</p>
-      <Select options={activityCatOptions} onChange={handleChange} />
+      <Select options={activityCatOptions} onChange={handleChange} value={value} />
     </div>
-  );
-};
-
+  )
+}
+    
 export default ActivityCatSelect;

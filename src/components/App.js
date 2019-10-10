@@ -172,7 +172,7 @@ class App extends React.Component {
           { value: "1710- Maths", label: "Maths" },
         ]
       })
-    } else if (selectedCatOption.value === "Advice") {
+    } else if (selectedCatOption.value === "Advice category") {
       this.setState({
         typeOptions: [
           { value: "2021- Dementia", label: "Dementia" },
@@ -207,7 +207,9 @@ class App extends React.Component {
       );
     });
     this.setState({
-      results
+      results,
+//       selectedCatOption: null, ressetting state before results are passed to render list
+//       selectedTypeOption: null
     });
   };
 
@@ -223,7 +225,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Router>
-          <ActivityCatSelect handleChange={this.onHandleCatSelect} />
+          <ActivityCatSelect handleChange={this.onHandleCatSelect} value={this.state.selectedCatOption} />
           <ActivityTypeSelect
             typeOptions={this.state.typeOptions}
             handleChange={this.onHandleTypeSelect}
@@ -242,7 +244,7 @@ class App extends React.Component {
               />
             </div>
             <div>
-              <label htmlFor="location">Search for town: </label>
+              <label htmlFor="location">Search by town: </label>
               <input
                 id="location"
                 type="text"
