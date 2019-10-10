@@ -211,13 +211,6 @@ class App extends React.Component {
     });
   };
 
-  onHandleRestartSearch = () => {
-    this.setState({
-      results: [],
-      typeOptions: []
-    });
-  };
-
   onHandleLocationInput = (e) => {
     this.setState({town: e.target.value})
   }
@@ -237,7 +230,6 @@ class App extends React.Component {
           />
           <div className="button-container">
             <SearchButton handleClick={this.onHandleClick} />
-            <RestartButton handleRestartSearch={this.onHandleRestartSearch} />
           </div>
           <div className="filters">
             <div>
