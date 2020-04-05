@@ -249,7 +249,7 @@ class App extends React.Component {
                 />
               </div>
             </div>
-            <ActivityDetail 
+            <ActivityDetail
               results={this.state.results} 
               clickPrint={this.onHandlePrint}
               town={this.state.town}
@@ -258,7 +258,7 @@ class App extends React.Component {
               <Route 
                 path="/pdf" 
                 render={() => (
-                  <PDFDocument />
+                  <PDFDocument selectedTypeOption={this.state.selectedTypeOption} />
                 )} 
               />
             </Switch>

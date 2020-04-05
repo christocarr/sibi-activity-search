@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { PDFViewer, Page, Text, View, Document,StyleSheet } from '@react-pdf/renderer'
+import { PDFViewer, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer'
 
 const styles = StyleSheet.create({
   page: {
@@ -20,12 +20,14 @@ const styles = StyleSheet.create({
   }
 })
 
-const PDFDocument = () => {
+const PDFDocument = ({ selectedTypeOption }) => {
 
   const [PDFData, setPDFData] = useState(() => {
     const data = localStorage.getItem('PDFData')
     return JSON.parse(data)
   })
+
+  console.log(selectedTypeOption)
 
   const { NameOfService, AccessibilityDetails, AddressLine1, AddressLine2, AddressLine3, Postcode, OtherDetailedInformation, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd, SundayStart, SundayEnd, Cost,  Buses, TubeAndTrains, CarParkingDetails, Name1, PhoneNumber1, Email1, Name2, PhoneNumber2, Email2, Website, OtherContactInfo  } = PDFData
 
@@ -33,6 +35,9 @@ const PDFDocument = () => {
     <PDFViewer className="pdf-viewer">
       <Document>
         <Page size="A4" style={styles.page}>
+        <View style={styles.heading}>
+            <Text>{selectedTypeOption}</Text>
+          </View>
           <View style={styles.text}>
             <Text>Going to a new group can feel daunting but be very worthwhile. Groups all vary so you may need to try a few groups or go more than once to get to know people and find somewhere that suits you. And while we provide information about what groups are out there we can't guarantee them.</Text>
           </View>
